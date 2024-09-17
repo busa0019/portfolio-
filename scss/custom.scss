@@ -1,0 +1,338 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+// all updates goes here such as color etc, anything with $ sign goes here
+// Import Google fonts here
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+// Include any default variable overrides here (colors, font sizes, font family, etc..)
+$primary: #A04ADD;
+$secondary: #3B53C7;
+$success: #A4D882;
+$info: #59C1EF;
+$warning: #FFF689;
+$danger: #E5446D;
+$light: #f2f2f2;
+$dark: #181853;
+
+
+// New color additions
+$highlight: #FFFF00; 
+$contrast: #000000; 
+
+
+// Adjust nav link hover color here
+$navbar-dark-hover-color: $primary;
+
+// Typography
+// Change font family for base text
+$font-family-base: 'Source Sans 3', sans-serif;
+
+// Change font family for headings
+$headings-font-family: 'Libre Baskerville', serif;
+
+// Change font sizes for h1-h6 using values in assignment
+$h1-font-size: 3.052rem;
+$h2-font-size: 2.441rem;
+$h3-font-size: 1.953rem;
+$h4-font-size: 1.563rem;
+$h5-font-size: 1.25rem;
+$h6-font-size: 1rem;
+
+
+// $spacer: 5rem;
+// Define the missing colors
+$primary-color: $primary; 
+$white-color: #ffffff; 
+
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+// target normal css code
+// Target .navbar-brand and change font-family to use 'Libre Baskerville'.
+
+// Base style for mobile default
+.logo {
+  height: 40px;
+}
+
+.navbar-brand {
+    font-family: $headings-font-family;
+  }
+  
+/* General styles for all links */
+a {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: $info; 
+  background-color:$danger; 
+  text-decoration: none; 
+}
+
+/* General styles for all buttons */
+.btn {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: $primary; 
+  border-color: $secondary; 
+  color: $contrast; 
+}
+
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; // Initially hidden
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000; // Ensure it appears above other content
+    background-color: $primary-color;
+    color: $white-color;
+    border: none;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+  .left-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the text vertically */
+  padding: 2rem; /* Add some padding around the text */
+  background-color: #343a40; /* Dark background for the text panel */
+  color: white; /* White text color */
+}
+
+.blink-button {
+  transition: all 0.3s ease-in-out;
+}
+
+.blink-button:hover {
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+
+#why-work-with-me {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-top: 20px;
+}
+#why-work-with-me h2 {
+  color: #333;
+}
+.features-list {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+}
+.features-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.features-list i {
+  margin-right: 10px;
+  color: #007bff; /* Bootstrap primary blue for consistency */
+}
+
+
+#faq {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+.faq-question {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.faq-answer {
+  display: none; /* Hidden by default */
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+  // .accessibility-options button {
+  //   margin: 5px;
+  //   font-size: 16px;
+  //   padding: 5px 10px;
+  //   background-color: $primary-color;
+  //   color: $white-color;
+  //   border: none;
+  //   border-radius: 4px;
+    
+  //   &:hover {
+  //     background-color: darken($primary-color, 10%);
+  //   }
+  // }
+  
+  // .high-contrast {
+  //   background-color: $dark;
+  //   color: $highlight; 
+  
+  //   a {
+  //     color:$info; 
+  //   }
+  
+  //   button {
+  //     background-color:$highlight; 
+  //     color: $contrast; 
+  //   }
+  // }
+  // .visually-hidden {
+  //   position: absolute;
+  //   width: 1px;
+  //   height: 1px;
+  //   padding: 0;
+  //   margin: -1px;
+  //   overflow: hidden;
+  //   clip: rect(0, 0, 0, 0);
+  //   border: 0;
+  // }
+    //   /* Hide initially hidden content */
+    //   .hidden-content {
+    //     display: none;
+    //   }
+      
+    // /* Styling for the left side with the company name and tagline */
+    // .left-panel {
+    //     margin-right: -10px;
+    //   }
+      
+
+     /* Skip link styles */
+     .skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $contrast;
+  color: $light;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+
+  // // Custom button style with blinking animation
+  // .blink-button {
+  //   background-color: $primary; 
+  //   color: $white-color; 
+  //   border: none;
+  //   border-radius: 5px;
+  //   padding:  20px;
+  //   font-size: 16px;
+  //   cursor: pointer;
+  //   outline: none;
+  //   transition: background-color 0.3s ease-in-out;
+  
+  //   &:hover {
+  //     background-color: darken($primary, 10%);
+  //   }
+  
+  //   &:focus {
+  //     outline: none; 
+  //   }
+  
+  //   //  animation
+  //   animation:blinking 1s infinite;
+  // }
+  
+ 
+/* Tablet Media Query (min-width: 768px and max-width: 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  #servicesSection .row {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+  }
+
+  #servicesSection .col-lg-6 {
+    flex: 1;
+  }
+
+  #servicesSection .col-lg-6:first-of-type {
+    order: 2; 
+  }
+
+  #servicesSection .col-lg-6:last-of-type {
+    order: 1; 
+  }
+
+  #testimonialsSection .row {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+  }
+
+  #testimonialsSection .col-lg-6 {
+    flex: 1; 
+  }
+
+  #testimonialsSection .col-lg-6.order-lg-2 {
+    order: 1; 
+  }
+
+  #testimonialsSection .col-lg-6.order-lg-1 {
+    order: 2; 
+  }
+
+  #featuredProjectsSection .row {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+  }
+
+  #featuredProjectsSection .col-lg-6 {
+    flex: 1; 
+  }
+
+  #featuredProjectsSection .col-lg-6:first-of-type {
+    order: 2; 
+  }
+
+  #featuredProjectsSection .col-lg-6:last-of-type {
+    order: 1;
+  }
+  
+}
+
+// Media query for desktop
+@media (min-width: 992px) {
+  
+  h3 {
+    font-size: 2rem; // Adjust h3 font size for desktop
+  }
+  p{
+    font-size: 1.2rem;
+  }
+}
+
